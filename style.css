@@ -6,14 +6,29 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+
+#clear {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 8px 24px;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
-  height: 800px;
+  width: 500px;
+  height: 500px;
   border: 1px solid black;
 }
+
+.change-color {
+  background-color: black;
+}
+
