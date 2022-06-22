@@ -1,17 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Kanit', sans-serif;
 }
 
 body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 30px;
+}
+
+.grid-size {
+  font-size: 30px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
 
 #clear {
   font-family: Arial, Helvetica, sans-serif;
@@ -30,13 +49,13 @@ body {
 }
 
 .change-color {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(0, 0, 0);
 }
 
 .slider {
   /* -webkit-appearance: none; */
   appearance: none;
-  width: 300px;
+  width: 200px;
   height: 8px;
   background: lightgrey;
   color: green;

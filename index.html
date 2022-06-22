@@ -9,17 +9,34 @@
   <title>Etch a Sketch</title>
 </head>
 <body>
-  <div class="grid-layout"></div>
-  <div class="container" draggable="false" >
-    <!-- This is where javascript will put divs to create a grid -->
-  </div>
-  <div>
-    <button id="clear">Clear</button>
+  <nav>
+    <h1>Etch a Sketch</h1>
+  </nav>
+
+  <div class="main-content">
+    <section class="grid">
+      <div class="grid-size"></div>
+      <div class="container">
+        <!-- This is where javascript will put divs to create a grid -->
+      </div>
+      <div class="slide-container">
+        <label>Grid size:</label>
+        <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+      </div>
+    </section>
+
+    <section class="settings">
+      <div>
+        <label>Change Color: </label>
+        <input type="color" class="color-picker" value="#000000">
+      </div>
+      <div>
+        <button id="clear">Clear</button>
+      </div>
+    </section>
   </div>
 
-  <div class="slide-container">
-    <input type="range" min="2" max="20" value="10" class="slider" id="myRange">
-  </div>
+  <footer>Copyright &copy; Sanjero 2022</footer>
 
 </body>
 </html>
