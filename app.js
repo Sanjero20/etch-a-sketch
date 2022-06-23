@@ -4,14 +4,13 @@ const clearBtn = document.querySelector('#clear');
 const slider = document.querySelector('.slider');
 const colorpick = document.querySelector('.color-picker');
 
-let mousedown = false;
-
 let grid = slider.value;
-let lineColor = "#f7f7f7";
 let color = colorpick.value;
 
 let boxSize;
 let boxs;
+let lineColor = "#f7f7f7";
+let mousedown = false;
 
 // Create a Grid
 getGridSize(grid);
@@ -21,7 +20,7 @@ drawOnBox()
 clearDrawing()
 
 
-// Functions bruh
+// Functions 
 function getGridSize(grid) {
   displayLayout(grid);
   createGrid(grid);
@@ -48,20 +47,14 @@ function setBoxStyling(element) {
   // element.setAttribute('style', 'border: 1px solid black');
   element.style['width'] = `${boxSize}%`;
   element.style['height'] = `${boxSize}%`;
+  element.style['background-color'] = "white"
   element.style['border'] = `1px solid ${lineColor}`;
   element.style['box-sizing'] = 'border-box';
-  element.setAttribute('draggable', false);
 
   // prevents the element from being dragged
   element.addEventListener('dragstart', (e) => {
     e.preventDefault()
   })
-}
-
-function addColor(element) {
-  element.style['background-color'] = color;
-  element.style['border'] = color;
-  // element.classList.add('change-color');
 }
 
 function checkMouseEvent() {
@@ -89,8 +82,7 @@ function drawOnBox() {
 function clearDrawing() {
   clearBtn.onclick = () => {
     boxs.forEach(box => {
-      box.style['backgroundColor'] = '';
-      box.style['border'] = `1px solid ${lineColor}`;
+      setBoxStyling(box);
     });
   }
 }
@@ -99,8 +91,13 @@ function displayLayout(grid) {
   gridLayout.innerHTML = `${grid}x${grid} Layout`
 }
 
+function addColor(element) {
+  element.style['background-color'] = color;
+  element.style['border'] = color;
+}
+
 function changeColor() {
-  colorpick.onchange = function() {
+  colorpick.oninput = function() {
     color = colorpick.value;
   }
 }

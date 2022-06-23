@@ -15,22 +15,24 @@
 
   <div class="main-content">
     <section class="grid">
-      <div class="grid-size"></div>
       <div class="container">
-        <!-- This is where javascript will put divs to create a grid -->
-      </div>
-      <div class="slide-container">
-        <label>Grid size:</label>
-        <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+        <!-- grid -->
       </div>
     </section>
 
     <section class="settings">
-      <div>
-        <label>Change Color: </label>
+      <div class="color"> <!--Color Picker-->
+        <label>Color:</label>
         <input type="color" class="color-picker" value="#000000">
       </div>
-      <div>
+
+      <div class="slide-container"> <!--Change Grid Size-->
+        <div class="grid-size"></div>
+        <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+        <label>Grid size</label>
+      </div>
+
+      <div> <!-- Clear Drawing-->
         <button id="clear">Clear</button>
       </div>
     </section>
