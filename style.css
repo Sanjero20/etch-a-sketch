@@ -64,7 +64,7 @@ footer {
   padding: 8px 24px;
   border: none;
   border-radius: 10px;
-  background-color: grey;
+  background-color: rgb(192, 192, 192);
   transition: 0.1s;
 }
 #clear:hover {
