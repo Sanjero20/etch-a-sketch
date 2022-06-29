@@ -26,7 +26,7 @@ nav {
 
 footer {
   width: 100%;
-  font-size: 15px;
+  font-size: 20px;
   padding: 10px 0;
 }
 
@@ -133,9 +133,14 @@ footer {
 }
 
 @media (max-width: 1366px) {
-  .main-content {
+  main {
     display: flex;
-    justify-content: center;
+    margin: 20px;
+  }
+
+  .container {
+    width: 400px;
+    height: 400px;
   }
 }
 

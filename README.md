@@ -7,3 +7,5 @@ Created with:
   - JAVASCRIPT
   
 Live Preview:  [click here](https://sanjero20.github.io/etch-a-sketch/)
+
+**Note:** Not compatible with mobile devices.
