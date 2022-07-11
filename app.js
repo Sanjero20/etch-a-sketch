@@ -3,6 +3,7 @@ const container = document.querySelector('.container');
 const clearBtn = document.querySelector('#clear');
 const slider = document.querySelector('.slider');
 const colorpick = document.querySelector('.color-picker');
+const randomcolor = document.querySelector('#randomizer');
 
 let grid = slider.value;
 let color = colorpick.value;
@@ -71,8 +72,10 @@ function removeGrid() {
 function drawOnBox() {
   boxs.forEach(box => {
     box.addEventListener('mouseover', () => {
-      if (mousedown) {addColor(box)}
-      // addColor(box);
+      if (mousedown) {
+        addColor(box)
+      }
+
     });
 
     box.addEventListener('mousedown', () => addColor(box))
@@ -92,12 +95,25 @@ function displayLayout(grid) {
 }
 
 function addColor(element) {
+  checkMode();  // Check if random color mode is enabled then add color
   element.style['background-color'] = color;
   element.style['border'] = color;
 }
 
 function changeColor() {
+  // automatically disables random color if the user change the color manually
   colorpick.oninput = function() {
     color = colorpick.value;
+    randomcolor.checked = false;
+  } 
+}
+
+function checkMode() {
+  if (randomcolor.checked) {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    color = "#" + randomColor;
+  }
+  else {
+    color = colorpick.value
   }
 }
